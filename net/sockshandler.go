@@ -26,8 +26,8 @@ func (server *SocksServer) AcceptConnections(listener net.Listener) error {
 			return err
 		}
 		go server.HandleConnection(connection)
-		return nil
 	}
+	return nil
 }
 
 func (server *SocksServer) HandleConnection(connection net.Conn) error {
