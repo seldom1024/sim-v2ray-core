@@ -14,7 +14,7 @@
 * VSource：用户所使用的需要翻墙的软件，比如浏览器
 * VEnd：用户需要访问的网站
 * VUser：一个受到 VPoint 认证的帐号
-* VID：全局唯一的 ID，类似于 UUID
+* [VID](https://github.com/V2Ray/v2ray-core/blob/master/spec/vid.md)：全局唯一的 ID，类似于 UUID
 
 
 ### 工作流程
@@ -24,13 +24,13 @@ VPoint 采用白名单机制，只接受已认证帐号的请求。
 ### 通信协议
 * VPoint 之间默认使用自有 VMess 协议，或第三方自定义协议。
 * VPoint 和客户端之间可使用以下协议：
-    * HTTP Proxy
-    * SOCKS 5 Proxy
-    * PPTP / L2TP / SSTP 等 VPN 隧道
-    * 其它自定义协议
+  * HTTP Proxy
+  * SOCKS 5 Proxy
+  * PPTP / L2TP / SSTP 等 VPN 隧道
+  * 其它自定义协议
 * VPoint 和目标网站之间使用以下协议：
-    * HTTP / HTTPS
-    * UDP (DNS)
+  * HTTP / HTTPS
+  * UDP (DNS)
 
 #### VMess
 VMess 为 V2Ray 的原生协议，设计用于两个 VPoint 之间的通信。[详细设计](./vmess.md)
@@ -55,8 +55,8 @@ TODO
 * 配置文件处理：读取和解析配置文件
 * 输入：负责与客户端建立连接（如 TCP），接收客户端的消息
 * 控制中心：负责处理事件
-    * 加密解密
-    * VPoint 负载均衡
+  * 加密解密
+  * VPoint 负载均衡
 * VPoint 进程间通信
 * 输出：负责向客户端发送消息
 
