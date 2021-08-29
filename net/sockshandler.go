@@ -30,6 +30,6 @@ func (server *SocksServer) AcceptConnections(listener net.Listener) error {
 	}
 }
 
-func (server *SocksServer) HandleConnection(connection *net.Conn) error {
+func (server *SocksServer) HandleConnection(connection net.Conn) error {
 	return nil
 }
