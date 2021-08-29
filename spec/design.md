@@ -33,7 +33,7 @@ VPoint 采用白名单机制，只接受已认证帐号的请求。
     * UDP (DNS)
 
 #### VMess
-VMess 为 V2Ray 的原生协议，设计用于两个 VPoint 之间的通信。[详细设计](https://github.com/V2Ray/v2ray-core/blob/master/spec/vmess.md)
+VMess 为 V2Ray 的原生协议，设计用于两个 VPoint 之间的通信。[详细设计](./vmess.md)
 
 ### VUser
 * 每个 VUser 有一个 VID

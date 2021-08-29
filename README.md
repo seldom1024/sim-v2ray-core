@@ -10,7 +10,7 @@ V2Ray 是一个翻墙工具包，用于简化和复用其它翻墙工具，加�
 * 开放协议支持，兼容 ShadowSocks 和 GoAgent
 
 ## 概要设计
-[链接](https://github.com/V2Ray/v2ray-core/blob/master/spec/design.md)
+[链接](./spec/design.md)
 
 ## 开发日程
 
