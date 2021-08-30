@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "COVERALLS_TOKEN is : echo $COVERALLS_TOKEN"
+
 echo "mode: set" > coverall.out
 fail=0
 
