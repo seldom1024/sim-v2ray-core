@@ -1,6 +1,9 @@
 package vmess
 
-import "net"
+import (
+	"fmt"
+	"io"
+)
 
 // VMessInput implements the input message of VMess protocol. It only contains
 // the header of a input message. The data part will be handled by connection
@@ -16,19 +19,18 @@ type VMessInput struct {
 	target   [256]byte
 }
 
-type VMessReader struct {
-	conn *net.Conn
+func Read(reader io.Reader) (input *VMessInput, err error) {
+	buffer := make([]byte, 17 /* version + user hash */)
+	nBytes, err := reader.Read(buffer)
+	if err != nil {
+		return
+	}
+	if nBytes != len(buffer) {
+		err = fmt.Errorf("Unexpected length of header %d", nBytes)
+		return
+	}
+
+	return
 }
 
-// NewVMessReader creates a new VMessReader
-func NewVMessReader(conn *net.Conn) (VMessReader, error) {
-	var reader VMessReader
-	reader.conn = conn
-	return reader, nil
-}
-
-// Read reads data form current connection and form a VMessInput if possible.
-func (*VMessReader) Read() (VMessInput, error) {
-	var input VMessInput
-	return input, nil
-}
+type VMessOutput [4]byte
